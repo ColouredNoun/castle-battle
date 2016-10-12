@@ -48,7 +48,7 @@
      <Compile Include="Assets\Faction.cs" />
      <Compile Include="Assets\Money\AddReduceMoney.cs" />
      <Compile Include="Assets\Money\Money.cs" />
-     <Compile Include="Assets\Money\income.cs" />
+     <Compile Include="Assets\Money\globalTimerScript.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -92,7 +92,9 @@
      <Compile Include="Assets\RTS select\Script\UnitSelectionComponent.cs" />
      <Compile Include="Assets\RTS select\Script\Utils.cs" />
      <Compile Include="Assets\RewindTools\Shared\ExtensionMethods.cs" />
+     <Compile Include="Assets\Scripts For WIP\Experience.cs" />
      <Compile Include="Assets\Scripts For WIP\RTScamera.cs" />
+     <Compile Include="Assets\Scripts For WIP\Unit.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
@@ -104,6 +106,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />
      <Compile Include="Assets\SearchClosestTarget.cs" />
      <Compile Include="Assets\SpawnScript.cs" />
+     <Compile Include="Assets\Team.cs" />
      <Compile Include="Assets\Title screen\MenuScript.cs" />
      <Compile Include="Assets\UnitMovement.cs" />
      <Compile Include="Assets\WorldBuilder\Scripts\Heightmapbuilder.cs" />

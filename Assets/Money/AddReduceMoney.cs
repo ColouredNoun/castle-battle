@@ -1,35 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public class AddReduceMoney : MonoBehaviour {
+public class AddReduceMoney : MonoBehaviour
+{
 
-	public GameObject camera;
+    public GameObject camera;
+    public bool giveIncome;
+    public int income;
+    public Text incomeText;
+  
+
+    public void addIncome() {
+        camera.GetComponent<Money>().addMoney(income);
+  }
+
+    void Start()
+    {
+        income = 15;
+        giveIncome = true;
+        StartCoroutine("waitForIncome");
+
+       incomeText.text = income.ToString();
+    }
+
+    IEnumerator waitForIncome() {
+        while (giveIncome) {
+          //  Debug.Log("Timer For Income Started!");
+            yield return new WaitForSeconds(2);
+          //  Debug.Log("Here's your income! Have fun");
+            addIncome();
+        }
+    }
 
 
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-
-
-	
-	// Update is called once per frame
-	void Update () {
+    void update()
+    {
+   
+       
+        
+       
 
 
-		float Time = camera.GetComponent<income> ().timerFunction ();
-
-		if (Time > 1) {
-			camera.GetComponent<Money>().addMoney (15);
-		}
-
-
-
-	}
+    }
 
 }
-
-
-
-

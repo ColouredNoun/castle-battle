@@ -23,11 +23,7 @@ public class Money : MonoBehaviour {
 	public void addMoney(int moneyToAdd){
 
 		money += moneyToAdd;
-
-		moneyText.text = money.ToString ();
-
-
-
+        moneyText.text = money.ToString ();
 	}
 
 	public void subtractMoney(int moneyToSubtract){

@@ -97,6 +97,9 @@ GameObject:
   - 114: {fileID: 139590062}
   - 114: {fileID: 139590061}
   - 114: {fileID: 139590060}
+  - 114: {fileID: 139590065}
+  - 114: {fileID: 139590064}
+  - 114: {fileID: 139590063}
   m_Layer: 0
   m_Name: CameraHolder
   m_TagString: Untagged
@@ -117,7 +120,7 @@ Transform:
   m_Children:
   - {fileID: 1920234005}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &139590059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a3ba26b961b694d849aa981345638a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 0
 --- !u!114 &139590061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 139590057}
+  giveIncome: 0
+  income: 0
+  incomeText: {fileID: 0}
 --- !u!114 &139590062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +175,120 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 0
   moneyText: {fileID: 2077995141}
+--- !u!114 &139590063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 139590057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec93e5540f36f8243acb5b9d407e50ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  moneyText: {fileID: 447192582}
+--- !u!114 &139590064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 139590057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 993efbf1a098567439fd81166c5907a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 0
+--- !u!114 &139590065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 139590057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75516fafb194c5c4cb0ab04640e8ef5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 139590057}
+  giveIncome: 0
+  income: 0
+  incomeText: {fileID: 2077995141}
+--- !u!1 &447192580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 447192581}
+  - 222: {fileID: 447192583}
+  - 114: {fileID: 447192582}
+  m_Layer: 5
+  m_Name: Money
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &447192581
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 447192580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -21.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1781744086}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 44.4, y: -12.4}
+  m_SizeDelta: {x: 296.1, y: 89.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &447192582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 447192580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Money
+--- !u!222 &447192583
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 447192580}
 --- !u!1 &528307916
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +415,10 @@ Prefab:
       propertyPath: m_Name
       value: Castle2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 63378c9e93891ba43b71973b16224476, type: 3}
+      propertyPath: m_TagString
+      value: Castle2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63378c9e93891ba43b71973b16224476, type: 3}
   m_IsPrefabParent: 0
@@ -314,8 +437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b507efcc13fb62d4fa70ce566afce844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castle1: {fileID: 761735637}
-  castle2: {fileID: 1947489160}
   Unit: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
   EnemyAnimatorController: {fileID: 9100000, guid: 2cd6bf77cac24414c8e134b0c0e7aed3,
     type: 2}
@@ -606,6 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {x: 0, y: 0, z: 0}
+  LockedonTarget: 
 --- !u!1001 &1247599130
 Prefab:
   m_ObjectHideFlags: 0
@@ -939,8 +1061,8 @@ Canvas:
   m_GameObject: {fileID: 1781744082}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1920234004}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -959,9 +1081,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.6854, y: 61.7138, z: 0.007999999}
   m_Children:
   - {fileID: 2077995140}
+  - {fileID: 447192581}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
@@ -1031,6 +1154,10 @@ Prefab:
     - target: {fileID: 400000, guid: 63378c9e93891ba43b71973b16224476, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 63378c9e93891ba43b71973b16224476, type: 3}
+      propertyPath: m_TagString
+      value: Castle1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63378c9e93891ba43b71973b16224476, type: 3}
@@ -1155,8 +1282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b507efcc13fb62d4fa70ce566afce844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castle1: {fileID: 761735637}
-  castle2: {fileID: 1947489160}
   Unit: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
   EnemyAnimatorController: {fileID: 9100000, guid: 2cd6bf77cac24414c8e134b0c0e7aed3,
     type: 2}
@@ -1172,7 +1297,7 @@ GameObject:
   - 222: {fileID: 2077995142}
   - 114: {fileID: 2077995141}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Income
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,7 +1310,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2077995139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -37.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1193,8 +1318,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 24.3, y: 92.7}
+  m_SizeDelta: {x: 329, y: 105.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077995141
 MonoBehaviour:
@@ -1217,18 +1342,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 6
+    m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Income
 --- !u!222 &2077995142
 CanvasRenderer:
   m_ObjectHideFlags: 0
