@@ -3,20 +3,20 @@ using System.Collections;
 
 public class SpawnScript : MonoBehaviour {
     float Timer;
-    public GameObject Unit;
     public RuntimeAnimatorController EnemyAnimatorController;
     public GameObject camera;
     bool recentlySpawned;
     int numberofSpawnedUnits;
     float Time;
     bool SpawningUnits;
+    public GameObject SelectedUnit;
     // Use this for initialization
     void Start () {
         numberofSpawnedUnits = 0;
         recentlySpawned = false;
         SpawningUnits = true;
         StartCoroutine("UnitSpawnTime");
-
+        
     }
 
     // Update is called once per frame
@@ -25,13 +25,12 @@ public class SpawnScript : MonoBehaviour {
         }
 
 
-     void SpawnUnit()
+     void SpawnUnit(GameObject Unit)
     {
         var NewUnit = Instantiate(Unit, transform.position, Quaternion.identity) as GameObject;
         NewUnit.GetComponent<Animator>().runtimeAnimatorController = EnemyAnimatorController;
 
         numberofSpawnedUnits++;
-        NewUnit.transform.localScale = new Vector3(5, 5, 5);
         NewUnit.AddComponent<Rigidbody>();
         NewUnit.AddComponent<CapsuleCollider>();
         NewUnit.AddComponent<NavMeshAgent>();
@@ -59,7 +58,8 @@ public class SpawnScript : MonoBehaviour {
         IEnumerator UnitSpawnTime() {
             while (SpawningUnits)
             {
-            SpawnUnit();
+         
+            SpawnUnit(SelectedUnit);
            
                 //  Debug.Log("Timer For Income Started!");
                 yield return new WaitForSeconds(15);

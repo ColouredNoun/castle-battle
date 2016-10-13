@@ -77,6 +77,6 @@ public class SearchClosestTarget : MonoBehaviour {
     }
             // Update is called once per frame
             void Update () {
-        DebugExtension.DebugCircle(this.transform.position, this.transform.position, Color.green, radius);
+        //DebugExtension.DebugCircle(this.transform.position, this.transform.position, Color.green, radius);
     }
 }

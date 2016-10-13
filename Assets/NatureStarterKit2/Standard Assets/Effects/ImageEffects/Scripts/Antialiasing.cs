@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using UnitySampleAssets.ImageEffects;
 namespace UnityStandardAssets.ImageEffects
 {
     public enum AAMode

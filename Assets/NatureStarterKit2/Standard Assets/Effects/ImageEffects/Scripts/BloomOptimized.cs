@@ -6,7 +6,7 @@ namespace UnitySampleAssets.ImageEffects
     [ExecuteInEditMode]
     [RequireComponent (typeof(Camera))]
     [AddComponentMenu ("Image Effects/Bloom and Glow/Bloom (Optimized)")]
-    class BloomOptimized : UnityStandardAssets.ImageEffects.PostEffectsBase
+    class BloomOptimized : PostEffectsBase
     {
 
         public enum Resolution {

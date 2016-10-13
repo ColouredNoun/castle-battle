@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.SceneManagement;
-
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -82,6 +80,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void RestartLevel ()
     {
-        SceneManager.LoadScene (0);
+        Application.LoadLevel (Application.loadedLevel);
     }
 }

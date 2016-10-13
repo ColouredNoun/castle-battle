@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnitySampleAssets.ImageEffects;
 using Random = UnityEngine.Random;
 
 namespace UnityStandardAssets.ImageEffects
