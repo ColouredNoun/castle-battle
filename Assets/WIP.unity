@@ -94,9 +94,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 139590058}
   - 114: {fileID: 139590059}
-  - 114: {fileID: 139590062}
-  - 114: {fileID: 139590061}
-  - 114: {fileID: 139590060}
   - 114: {fileID: 139590065}
   - 114: {fileID: 139590064}
   - 114: {fileID: 139590063}
@@ -136,45 +133,6 @@ MonoBehaviour:
   verticalSpeed: 40
   cameraRotateSpeed: 40
   cameraDistance: 40
---- !u!114 &139590060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 139590057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90a3ba26b961b694d849aa981345638a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &139590061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 139590057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75516fafb194c5c4cb0ab04640e8ef5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 139590057}
-  giveIncome: 0
-  income: 0
-  incomeText: {fileID: 0}
---- !u!114 &139590062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 139590057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec93e5540f36f8243acb5b9d407e50ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 0
-  moneyText: {fileID: 2077995141}
 --- !u!114 &139590063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +590,10 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
   m_IsPrefabParent: 0
@@ -668,6 +630,20 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!114 &1116908663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1116908659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc947746893d2db4cb63ebf6904568a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castle1: {fileID: 761735637}
+  castle2: {fileID: 1947489160}
+  Team: 1
 --- !u!195 &1116908664
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -807,6 +783,10 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
   m_IsPrefabParent: 0
@@ -863,6 +843,20 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!114 &1247599136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1247599131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc947746893d2db4cb63ebf6904568a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castle1: {fileID: 761735637}
+  castle2: {fileID: 1947489160}
+  Team: 2
 --- !u!54 &1247599137
 Rigidbody:
   m_ObjectHideFlags: 0

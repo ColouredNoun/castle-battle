@@ -31,19 +31,28 @@ public class SpawnScript : MonoBehaviour {
         NewUnit.GetComponent<Animator>().runtimeAnimatorController = EnemyAnimatorController;
 
         numberofSpawnedUnits++;
-        NewUnit.transform.localScale = new Vector3(10, 10, 10);
+        NewUnit.transform.localScale = new Vector3(5, 5, 5);
         NewUnit.AddComponent<Rigidbody>();
         NewUnit.AddComponent<CapsuleCollider>();
         NewUnit.AddComponent<NavMeshAgent>();
         var Faction = NewUnit.AddComponent<Faction>();
+        //When Unit is created it is awarded the Faction class
         Faction.FactionChooser(this.gameObject.name);
+        //The faction class awards a faction to the unit based on the castle
         NewUnit.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].color = Faction.FactionColor();
+        //The colour of the unit is changed based on the faction
         Transform Enemy = Faction.EnemyFinder();
+        // The Unit targets the enemy castle based on the faction
         NewUnit.name = ("Zombear" + numberofSpawnedUnits + " " + Faction.Team);
+        //The Unit is named based on the spawned Units
         NewUnit.AddComponent<UnitMovement>().target = Enemy;
+        //The Unit begins moving to targeted castle
         NewUnit.AddComponent<SelectableUnitComponent>();
+        //Unit is highlightable
         NewUnit.AddComponent<Unit>();
+        //Unit has Stats
         NewUnit.AddComponent<SearchClosestTarget>();
+        //Unit gains the ability to move toward the closest target as long as its an enemy 
     }
 
 
@@ -51,7 +60,7 @@ public class SpawnScript : MonoBehaviour {
             while (SpawningUnits)
             {
             SpawnUnit();
-            print("cake");
+           
                 //  Debug.Log("Timer For Income Started!");
                 yield return new WaitForSeconds(15);
             //  Debug.Log("Here's your income! Have fun");

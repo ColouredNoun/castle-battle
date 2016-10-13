@@ -7,48 +7,56 @@ public class SearchClosestTarget : MonoBehaviour {
     public string LockedonTarget;
     bool lockedOn;
     bool DetectedUnitFaction;
+    int SearchInterval;
+    bool ScanningForEnemies;
     // Use this for initialization
     void Start () {
         lockedOn = false;
         radius = 20f;
-	}
+        SearchInterval = 1;
+        ScanningForEnemies = true;
+        DetectedUnitFaction = false;
+        StartCoroutine("IntializeScanForEnemies");
+    }
 
-    public bool checkIfColliderIsEnemy(int Faction)
+    public bool checkIfColliderIsEnemy(string name,int Faction)
     {
+       
+
         if (Faction == this.gameObject.GetComponent<Faction>().Team)
         {
-            Debug.Log(this.gameObject.name + "Says:Hello Friend");
+            
             return false;
         }
       else
         {
-            Debug.Log("Intruder Detected");
             return true;
         }
-
+      
     }
 
-
-    // Update is called once per frame
-    void Update () {
+    public void ScanForEnemies(){
         center = this.transform.position;
+       
         if (lockedOn == false)
         {
             Collider[] hitColliders = Physics.OverlapSphere(center, radius);
 
-            for (int i = 0; i < hitColliders.Length; i++)
+            for (int i = 0; i<hitColliders.Length; i++)
             {
                 if (hitColliders[i].gameObject.GetComponent<Faction>() != null)
                 {
-                    DetectedUnitFaction = checkIfColliderIsEnemy(hitColliders[i].gameObject.GetComponent<Faction>().Team);
+                    
+                    DetectedUnitFaction = checkIfColliderIsEnemy(hitColliders[i].gameObject.name, hitColliders[i].gameObject.GetComponent<Faction>().Team);
+                    //Debug.Log(hitColliders[i].gameObject.GetComponent<Faction>().Team);
                     if (DetectedUnitFaction == true)
                     {
                         //Grow in size
-                        this.transform.localScale = new Vector3(12, 12, 12);
+                        this.transform.localScale = new Vector3(7, 7, 7);
 
                         UnitMovement unitmovement = this.GetComponent<UnitMovement>();
-                        LockedonTarget = hitColliders[1].transform.ToString();
-                        unitmovement.ChangeTarget(hitColliders[1].transform);
+                        LockedonTarget = hitColliders[i].transform.ToString();
+                        unitmovement.ChangeTarget(hitColliders[i].transform);
 
                         lockedOn = true;
                     }
@@ -56,7 +64,19 @@ public class SearchClosestTarget : MonoBehaviour {
             }
 
         }
+        }
 
-       // Debug.Log(hitColliders.Length);
+
+    IEnumerator IntializeScanForEnemies()
+    {
+        while (ScanningForEnemies)
+        {
+            ScanForEnemies();
+            yield return new WaitForSeconds(1);
+        }
+    }
+            // Update is called once per frame
+            void Update () {
+        DebugExtension.DebugCircle(this.transform.position, this.transform.position, Color.green, radius);
     }
 }

@@ -9,18 +9,21 @@ public class Faction : MonoBehaviour {
     public GameObject castle2;
 
     public int Team;
-
+ 
     public void FactionChooser(string castleSummonedFrom)
     {
         if (castleSummonedFrom == "Castle1")
         {
             Team = 1;
+           
+          
         }
         if (castleSummonedFrom == "Castle2")
         {
             Team = 2;
+         
         }
-       
+      
     }
     public Color FactionColor()
     {
@@ -56,13 +59,13 @@ public class Faction : MonoBehaviour {
 
         void Start()
     {
-         Team = 0;
-        
+         
+     
        
     }
 
     void Update()
     {
-
+       
     }
   }
