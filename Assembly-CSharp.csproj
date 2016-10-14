@@ -47,12 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\DebugDrawingExtension\DebugExtension.cs" />
      <Compile Include="Assets\DebugDrawingExtension\Example\Example.cs" />
-     <Compile Include="Assets\Faction.cs" />
      <Compile Include="Assets\Fighter Pack Bundle Free\Code\CameraControl.cs" />
-     <Compile Include="Assets\ListOfUnits.cs" />
-     <Compile Include="Assets\Money\AddReduceMoney.cs" />
-     <Compile Include="Assets\Money\Money.cs" />
-     <Compile Include="Assets\Money\globalTimerScript.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -96,9 +91,20 @@
      <Compile Include="Assets\RTS select\Script\UnitSelectionComponent.cs" />
      <Compile Include="Assets\RTS select\Script\Utils.cs" />
      <Compile Include="Assets\RewindTools\Shared\ExtensionMethods.cs" />
+     <Compile Include="Assets\Scripts For WIP\AddReduceMoney.cs" />
      <Compile Include="Assets\Scripts For WIP\Experience.cs" />
+     <Compile Include="Assets\Scripts For WIP\Faction.cs" />
+     <Compile Include="Assets\Scripts For WIP\HealthBar.cs" />
+     <Compile Include="Assets\Scripts For WIP\HeroMovement.cs" />
+     <Compile Include="Assets\Scripts For WIP\ListOfUnits.cs" />
+     <Compile Include="Assets\Scripts For WIP\Money.cs" />
      <Compile Include="Assets\Scripts For WIP\RTScamera.cs" />
+     <Compile Include="Assets\Scripts For WIP\SearchClosestTarget.cs" />
+     <Compile Include="Assets\Scripts For WIP\SpawnScript1.cs" />
+     <Compile Include="Assets\Scripts For WIP\Team.cs" />
      <Compile Include="Assets\Scripts For WIP\Unit.cs" />
+     <Compile Include="Assets\Scripts For WIP\UnitMovement.cs" />
+     <Compile Include="Assets\Scripts For WIP\globalTimerScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
@@ -108,11 +114,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />
-     <Compile Include="Assets\SearchClosestTarget.cs" />
-     <Compile Include="Assets\SpawnScript.cs" />
-     <Compile Include="Assets\Team.cs" />
      <Compile Include="Assets\Title screen\MenuScript.cs" />
-     <Compile Include="Assets\UnitMovement.cs" />
      <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\IKHands.cs" />
      <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\SmoothFollow.cs" />
      <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\WarriorAnimationDemoFREE.cs" />
@@ -182,7 +184,6 @@
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\RTS select\ProjectorAdditiveTint.shader" />
-     <None Include="Assets\Fonts\LuckiestGuy\LICENSE.txt" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />

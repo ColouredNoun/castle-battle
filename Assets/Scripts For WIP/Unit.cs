@@ -5,69 +5,76 @@ using System.Collections;
 public class Unit : MonoBehaviour {
 
     //------Variables-----//
-        int MaxHealth;
-        int CurrentHealth;
+        float dmg = 20f;
         int ArmorValue;
         string ArmorType;
         int CurrentMana;
         int MaxMana;
-        int MS;
-        int Range;
+        int MoveSpeed;
+        int AttackRange;
         string AttackType;
         int AttackValue;
         int AttackSpeed;
         int Turnspeed;
         int UnitValue;
+        float GruntHP;
+        string UnitName;
     //--------------------//
 
 
     //-----------Unit-Images------------//
-        public Image CurrentHealthImage;
-        public Image HealthBarBackGround;
+
     //----------------------------------//
 
+    //------------GameObjects-----------------//
+
+    //----------------------------------------//
 
     //--------Other-Scripts-Include------//
-        UnitMovement unitmovement;
+
     //----------------------------------//
 
 
     //-----Bools-----//
-        bool isDead;
-        bool damaged;
+
     //--------------//
 
     
 
 	// Use this for initialization
-	void Start () {
-        MaxHealth = 100;
-        CurrentHealth = MaxHealth;
-        
-	}
+	void Start ()
+        {
+          
+	    }
 	
 	// Update is called once per frame
 	void Update () 
     {
-   
-       if (damaged)
-        {
-
-        }
-
-
-
-        damaged = false;
 	}
 
-    public void TakeDamage(int amount)
+    
+    void attack ()
     {
-        damaged = true;
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            
+          Debug.Log("Attacked");
 
-        CurrentHealth -= amount;
+          GruntHP -= dmg;
 
-        
+          print(dmg);
+        }
+    }
+    //------SET AND GET ARMOR VALUE-------//
+    public void SetArmorValue(int PlusArmor)
+    {
+        ArmorValue = PlusArmor;
+
     }
 
-
+    public int GetArmorValue()
+    {
+        return ArmorValue;
+    }
+    //-----------------------------------//
 }

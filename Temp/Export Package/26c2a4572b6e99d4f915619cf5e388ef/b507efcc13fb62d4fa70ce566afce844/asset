@@ -1,0 +1,26 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class SpawnScript : MonoBehaviour {
+    float currentTime;
+    float Timer;
+    // Use this for initialization
+    void Start () {
+    
+	}
+	    
+	// Update is called once per frame
+	void Update () {
+
+        currentTime = Time.realtimeSinceStartup;
+        Timer = Time.realtimeSinceStartup; 
+
+        if ((Timer > 15) && (Timer < 16))
+        {
+            Timer = 0;
+
+        }
+        
+     
+    }
+}
