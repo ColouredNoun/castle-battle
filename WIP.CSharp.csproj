@@ -117,7 +117,6 @@
     <Compile Include="Assets\Scripts For WIP\Faction.cs" />
     <Compile Include="Assets\Scripts For WIP\HealthBar.cs" />
     <Compile Include="Assets\Scripts For WIP\HeroMovement.cs" />
-    <Compile Include="Assets\Scripts For WIP\ListOfUnits.cs" />
     <Compile Include="Assets\Scripts For WIP\Money.cs" />
     <Compile Include="Assets\Scripts For WIP\RTScamera.cs" />
     <Compile Include="Assets\Scripts For WIP\SearchClosestTarget.cs" />
@@ -125,6 +124,7 @@
     <Compile Include="Assets\Scripts For WIP\Team.cs" />
     <Compile Include="Assets\Scripts For WIP\Unit.cs" />
     <Compile Include="Assets\Scripts For WIP\UnitMovement.cs" />
+    <Compile Include="Assets\Scripts For WIP\Zombear.cs" />
     <Compile Include="Assets\Scripts For WIP\globalTimerScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
