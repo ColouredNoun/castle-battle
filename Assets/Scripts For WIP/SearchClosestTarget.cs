@@ -5,10 +5,11 @@ public class SearchClosestTarget : MonoBehaviour {
     float radius;
     public Vector3 center;
     public string LockedonTarget;
-    bool lockedOn;
+    public bool lockedOn;
     bool DetectedUnitFaction;
     int SearchInterval;
     bool ScanningForEnemies;
+    public GameObject LockedonGameObject;
     // Use this for initialization
     void Start () {
         lockedOn = false;
@@ -55,6 +56,7 @@ public class SearchClosestTarget : MonoBehaviour {
                        
                         UnitMovement unitmovement = this.GetComponent<UnitMovement>();
                         LockedonTarget = hitColliders[i].transform.ToString();
+                        LockedonGameObject = hitColliders[i].gameObject;
                         unitmovement.ChangeTarget(hitColliders[i].transform);
 
                         lockedOn = true;
@@ -76,6 +78,7 @@ public class SearchClosestTarget : MonoBehaviour {
     }
             // Update is called once per frame
             void Update () {
+                
         //DebugExtension.DebugCircle(this.transform.position, this.transform.position, Color.green, radius);
     }
 }

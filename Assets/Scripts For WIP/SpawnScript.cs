@@ -29,10 +29,10 @@ public class SpawnScript : MonoBehaviour {
      void SpawnUnit()
     {
         var NewUnit = Instantiate(Unit, transform.position, Quaternion.identity) as GameObject;
-        var NewHealthBar = Instantiate(HealthBar, transform.position, Quaternion.identity) as GameObject;
+
         NewUnit.GetComponent<Animator>().runtimeAnimatorController = EnemyAnimatorController;
         //-HEALTH-BAR-//
-
+        var NewHealthBar = Instantiate(HealthBar, transform.position, Quaternion.identity) as GameObject;
         NewHealthBar.transform.parent = NewUnit.transform;
         NewHealthBar.transform.position = new Vector3(NewHealthBar.transform.position.x, Unit.transform.lossyScale.y+1.1F,NewHealthBar.transform.position.z);
 
@@ -64,6 +64,8 @@ public class SpawnScript : MonoBehaviour {
         //Unit has HP
         NewUnit.AddComponent<SearchClosestTarget>();
         //Unit gains the ability to move toward the closest target as long as its an enemy
+        NewUnit.AddComponent<AttackTarget>();
+        //Attacking Script
         
 
     }

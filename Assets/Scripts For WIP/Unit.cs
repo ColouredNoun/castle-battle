@@ -5,7 +5,7 @@ using System.Collections;
 public class Unit : MonoBehaviour {
 
     //------Variables-----//
-        float dmg = 20f;
+        float dmg;
         int ArmorValue;
         string ArmorType;
         int CurrentMana;
@@ -17,8 +17,8 @@ public class Unit : MonoBehaviour {
         int AttackSpeed;
         int Turnspeed;
         int UnitValue;
-        float GruntHP;
         string UnitName;
+        public float UnitHP;
     //--------------------//
 
 
@@ -36,7 +36,7 @@ public class Unit : MonoBehaviour {
 
 
     //-----Bools-----//
-
+          bool IsDead;
     //--------------//
 
     
@@ -44,26 +44,19 @@ public class Unit : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
         {
-          
+            IsDead = false;
+            GetComponent<HealthBar>().SetMaxHealth(UnitHP);
+            GetComponent<HealthBar>().SetCurrentHealth(UnitHP);
+            GetComponent<HealthBar>().SetPercentage();
+            
+            
+
 	    }
 	
 	// Update is called once per frame
-	void Update () 
+    void Update()
     {
-	}
-
-    
-    void attack ()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            
-          Debug.Log("Attacked");
-
-          GruntHP -= dmg;
-
-          print(dmg);
-        }
+        
     }
     //------SET AND GET ARMOR VALUE-------//
     public void SetArmorValue(int PlusArmor)

@@ -18,8 +18,9 @@ public class HealthBar : MonoBehaviour {
     //-----Bools-----//
     bool IsDead;
     //--------------//
-    //--------Other-Scripts-Include------//
 
+    //--------Other-Scripts-Include------//
+    
     //----------------------------------//
 
     //----------Game-Objects-------------//
@@ -30,24 +31,18 @@ public class HealthBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        UnitHealthBar = GameObject.Find("HPGreen").transform;
-        UnitHealthBarDrain = GameObject.Find("HPRed").transform;
+        CalculatedHP = CurrentHealth / MaxHealth;
     }
 	
 	// Update is called once per frame
 	void Update () 
     {
-     
         CalculatedHP = CurrentHealth / MaxHealth;
         if (UnitHealthBar.transform.localScale.x < UnitHealthBarDrain.transform.localScale.x)
         {
-            UnitHealthBarDrain.transform.localScale = new Vector3(UnitHealthBarDrain.transform.localScale.x-0.01f,UnitHealthBarDrain.transform.localScale.y,UnitHealthBarDrain.transform.localScale.z);
+            UnitHealthBarDrain.transform.localScale = new Vector3(UnitHealthBarDrain.transform.localScale.x-0.001f,UnitHealthBarDrain.transform.localScale.y,UnitHealthBarDrain.transform.localScale.z);
         }
         
-        if (CurrentHealth == 0f)
-        {
-            IsDead = true;
-        }
         if (IsDead == true)
         {
             //KILL
@@ -80,12 +75,17 @@ public class HealthBar : MonoBehaviour {
     public void SetCurrentHealth(float UnitHP)
     {
         CurrentHealth = UnitHP;
+        if (CurrentHealth == 0f)
+        {
+            IsDead = true;
+        }
     }
 
     //=============================================//
 
+    //=========PercentageHP-Setters-And-Getters=======//
     public void SetPercentage()
-    {
+    {    
         print("working");
         UnitHealthBar.transform.localScale = new Vector3(CalculatedHP, UnitHealthBar.transform.localScale.y, UnitHealthBar.transform.localScale.z);
     }
@@ -93,5 +93,5 @@ public class HealthBar : MonoBehaviour {
     {
         return CalculatedHP*100;
     }
-
+    //=============================================//
 }
