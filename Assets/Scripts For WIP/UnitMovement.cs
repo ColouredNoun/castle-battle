@@ -38,9 +38,7 @@ public class UnitMovement : MonoBehaviour {
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
         Debug.DrawRay(transform.position, newDir, Color.red);
         transform.rotation = Quaternion.LookRotation(newDir);
-
-
-        transform.position = Vector3.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
+         transform.position = Vector3.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
 
     }
    public void ChangeTarget(Transform newTarget)

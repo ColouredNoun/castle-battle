@@ -2,10 +2,11 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class HealthBar : MonoBehaviour {
-    
+public class HealthBar : MonoBehaviour
+{
+
     //---Variables---//
-    float MaxHealth;
+   public float MaxHealth;
     float CurrentHealth;
     float HealthPercent;
     float CalculatedHP;
@@ -18,6 +19,7 @@ public class HealthBar : MonoBehaviour {
     //-----Bools-----//
     bool IsDead;
     //--------------//
+
     //--------Other-Scripts-Include------//
 
     //----------------------------------//
@@ -27,35 +29,31 @@ public class HealthBar : MonoBehaviour {
     public Transform UnitHealthBarDrain;
     //----------------------------------//
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start()
     {
-        UnitHealthBar = GameObject.Find("HPGreen").transform;
-        UnitHealthBarDrain = GameObject.Find("HPRed").transform;
+        UnitHealthBar = this.transform.GetChild(0);
+        UnitHealthBar = this.transform.GetChild(1);
+        CalculatedHP = CurrentHealth / MaxHealth;
     }
-	
-	// Update is called once per frame
-	void Update () 
+
+    // Update is called once per frame
+    void Update()
     {
-     
         CalculatedHP = CurrentHealth / MaxHealth;
         if (UnitHealthBar.transform.localScale.x < UnitHealthBarDrain.transform.localScale.x)
         {
-            UnitHealthBarDrain.transform.localScale = new Vector3(UnitHealthBarDrain.transform.localScale.x-0.01f,UnitHealthBarDrain.transform.localScale.y,UnitHealthBarDrain.transform.localScale.z);
+            UnitHealthBarDrain.transform.localScale = new Vector3(UnitHealthBarDrain.transform.localScale.x - 0.001f, UnitHealthBarDrain.transform.localScale.y, UnitHealthBarDrain.transform.localScale.z);
         }
-        
-        if (CurrentHealth == 0f)
-        {
-            IsDead = true;
-        }
+
         if (IsDead == true)
         {
             //KILL
         }
 
-	}
+    }
 
-    
+
     //=========MAX HP SETTERS AND GETTERS=======//
 
     public float GetMaxHealth()
@@ -66,6 +64,7 @@ public class HealthBar : MonoBehaviour {
     public void SetMaxHealth(float UnitHP)
     {
         MaxHealth = UnitHP;
+        SetPercentage();
     }
 
     //=========================================//
@@ -80,18 +79,22 @@ public class HealthBar : MonoBehaviour {
     public void SetCurrentHealth(float UnitHP)
     {
         CurrentHealth = UnitHP;
+        if (CurrentHealth == 0f)
+        {
+            IsDead = true;
+        }
     }
 
     //=============================================//
 
+    //=========PercentageHP-Setters-And-Getters=======//
     public void SetPercentage()
     {
-        print("working");
         UnitHealthBar.transform.localScale = new Vector3(CalculatedHP, UnitHealthBar.transform.localScale.y, UnitHealthBar.transform.localScale.z);
     }
     public float GetPercentage()
     {
-        return CalculatedHP*100;
+        return CalculatedHP * 100;
     }
-
+    //=============================================//
 }

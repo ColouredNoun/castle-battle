@@ -2,23 +2,24 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Unit : MonoBehaviour {
+public class Unit : MonoBehaviour
+{
 
     //------Variables-----//
-        float dmg = 20f;
-        int ArmorValue;
-        string ArmorType;
-        int CurrentMana;
-        int MaxMana;
-        int MoveSpeed;
-        int AttackRange;
-        string AttackType;
-        int AttackValue;
-        int AttackSpeed;
-        int Turnspeed;
-        int UnitValue;
-        float GruntHP;
-        string UnitName;
+   public float UnitHP;
+   public float Damage;
+   public int ArmorValue;
+   public string ArmorType;
+   public int CurrentMana;
+   public int MaxMana;
+   public int MoveSpeed;
+   public int AttackRange;
+   public string AttackType;
+   public int AttackValue;
+   public int AttackSpeed;
+   public int Turnspeed;
+   public int UnitValue;
+   public string UnitName;
     //--------------------//
 
 
@@ -36,35 +37,24 @@ public class Unit : MonoBehaviour {
 
 
     //-----Bools-----//
-
+    bool IsDead;
     //--------------//
 
-    
 
-	// Use this for initialization
-	void Start ()
-        {
-          
-	    }
-	
-	// Update is called once per frame
-	void Update () 
+
+    // Use this for initialization
+    void Start()
     {
-	}
+        IsDead = false;
 
-    
-    void attack ()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            
-          Debug.Log("Attacked");
-
-          GruntHP -= dmg;
-
-          print(dmg);
-        }
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     //------SET AND GET ARMOR VALUE-------//
     public void SetArmorValue(int PlusArmor)
     {
