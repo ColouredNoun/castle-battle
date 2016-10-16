@@ -69,6 +69,7 @@
     <Compile Include="Assets\DebugDrawingExtension\DebugExtension.cs" />
     <Compile Include="Assets\DebugDrawingExtension\Example\Example.cs" />
     <Compile Include="Assets\Fighter Pack Bundle Free\Code\CameraControl.cs" />
+    <Compile Include="Assets\Money\OnScreenTimer.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -169,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DebugDrawingExtension\readme.txt" />
+    <None Include="Assets\Fantasy RPG Icon Set- Free\Notes.txt" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
