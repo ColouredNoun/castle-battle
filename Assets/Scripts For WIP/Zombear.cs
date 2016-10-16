@@ -19,11 +19,11 @@ public class Zombear : Unit {
         Turnspeed = 10;
         UnitValue = 100;
         UnitName = "Zombear";
-        this.GetComponent<HealthBar>().SetCurrentHealth(UnitHP);
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        this.GetComponent<HealthBar>().SetCurrentHealth(UnitHP);
+    }
 }

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class HeroMovement : MonoBehaviour
+public class HeroMovement : NetworkBehaviour
 {
    public GameObject Hero;
     Vector3 target;
@@ -19,6 +20,10 @@ public class HeroMovement : MonoBehaviour
 
     void Update()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(1))
         {       // the button is pressed
             
