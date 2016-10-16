@@ -1730,7 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0824f1e47607fe24aa0cbb3415bb8f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hero: {fileID: 1000011352799496}
+  Hero: {fileID: 1000011656291412}
   distanceBetweenPointAndHero: 0
 --- !u!114 &114000010836744468
 MonoBehaviour:

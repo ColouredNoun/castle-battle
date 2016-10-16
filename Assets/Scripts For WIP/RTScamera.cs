@@ -9,6 +9,10 @@ public class RTScamera : MonoBehaviour {
     public float cameraRotateSpeed = 80;
     public float cameraDistance = 30;
 
+    public bool gripActive = false;
+
+    Vector3 gripPosition = Input.mousePosition;
+
     float curDistance;
 
     // Use this for initialization
@@ -23,6 +27,8 @@ public class RTScamera : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal") * horizontalSpeed * Time.deltaTime;
         float vertical = Input.GetAxis("Vertical") * verticalSpeed * Time.deltaTime;
         float rotation = Input.GetAxis("Rotation");
+       
+        
 
         transform.Translate(Vector3.forward * vertical);
         transform.Translate(Vector3.right * horizontal);
@@ -44,5 +50,44 @@ public class RTScamera : MonoBehaviour {
             transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0, difference, 0), Time.deltaTime);
         }
 
+        if (Input.GetMouseButtonUp(2))
+        {
+            gripActive = false;
+        }
+
+        if (Input.GetMouseButtonDown(2))
+        {
+            if (gripActive == false)
+            {
+                gripPosition = Input.mousePosition;
+                print(gripPosition);
+            }
+            gripActive = true;
+        }
+
+      
+
+        if (gripActive)
+        {
+            cameraGrip(gripPosition);
+        }
+
+    }
+
+    void cameraGrip(Vector3 pressPos)
+    {
+       Vector3 temp = Vector3.Scale((pressPos - Input.mousePosition), new Vector3(0.1f, 0.1f, 0.1f));
+       transform.position = transform.position + yzSwap(temp);
+       gripPosition = Input.mousePosition;
+       print(pressPos);
+    }
+
+    Vector3 yzSwap(Vector3 Swapper)
+    {
+        float buffer = Swapper[2];
+        Swapper[2] = Swapper[1];
+        Swapper[1] = buffer;
+
+        return Swapper;
     }
 }
