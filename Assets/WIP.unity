@@ -2800,6 +2800,10 @@ Prefab:
       propertyPath: m_Name
       value: ZomBearHealth 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013480021944, guid: b3ccc157216dfb145b823c2622363755, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3ccc157216dfb145b823c2622363755, type: 2}
   m_IsPrefabParent: 0
@@ -3359,6 +3363,10 @@ Prefab:
       propertyPath: m_Name
       value: ZomBunnyHealth 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012179469758, guid: ae33910c869eb1a428189e9dea6ff4e2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae33910c869eb1a428189e9dea6ff4e2, type: 2}
   m_IsPrefabParent: 0
@@ -3399,6 +3407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952938e06f4eaf14682c4afa1e0302f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UnitHealthBar: {fileID: 0}
+  UnitHealthBarDrain: {fileID: 0}
   UnitHP: 100
   Damage: 10
   ArmorValue: 0
@@ -3413,9 +3423,6 @@ MonoBehaviour:
   Turnspeed: 0
   UnitValue: 50
   UnitName: Zombear
-  UnitHealthBar: {fileID: 0}
-  UnitHealthBarDrain: {fileID: 0}
-  healthbar: {fileID: 0}
   XP: {fileID: 0}
   IsDead: 0
 --- !u!114 &1645034730
@@ -3859,6 +3866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3deb5c6e2b8357149abe2dde4e0e1dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UnitHealthBar: {fileID: 0}
+  UnitHealthBarDrain: {fileID: 0}
   UnitHP: 0
   Damage: 0
   ArmorValue: 0
@@ -3873,9 +3882,6 @@ MonoBehaviour:
   Turnspeed: 0
   UnitValue: 0
   UnitName: 
-  UnitHealthBar: {fileID: 0}
-  UnitHealthBarDrain: {fileID: 0}
-  healthbar: {fileID: 0}
   XP: {fileID: 0}
   IsDead: 0
 --- !u!1001 &1792757984
