@@ -7,6 +7,7 @@ public class SpawnScript : MonoBehaviour {
     public GameObject Unit;
     public RuntimeAnimatorController EnemyAnimatorController;
     public GameObject camera;
+    float BlinkDistance;
     bool recentlySpawned;
     int numberofSpawnedUnits;
     float Time;
@@ -17,7 +18,7 @@ public class SpawnScript : MonoBehaviour {
         recentlySpawned = false;
         SpawningUnits = true;
         StartCoroutine("UnitSpawnTime");
-
+        
     }
 
     // Update is called once per frame
@@ -40,6 +41,16 @@ public class SpawnScript : MonoBehaviour {
         // The Unit targets the enemy castle based on the faction
         NewUnit.name = ("Zombear" + numberofSpawnedUnits + " " + Faction.Team);
         //The Unit is named based on the spawned Units
+        
+        Vector3 NewUnitSpawnPosition = NewUnit.transform.position;
+        if (this.gameObject.name == "Castle2")
+        { BlinkDistance = 12; }
+        else
+        { BlinkDistance = -12; }
+
+        NewUnitSpawnPosition.z = NewUnitSpawnPosition.z + BlinkDistance; 
+        NewUnit.transform.position = new Vector3(NewUnitSpawnPosition.x, NewUnitSpawnPosition.y, NewUnitSpawnPosition.z);
+
         NewUnit.GetComponent<UnitMovement>().target = Enemy;
         //The Unit begins moving to targeted castle
       
