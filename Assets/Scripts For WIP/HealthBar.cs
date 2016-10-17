@@ -6,7 +6,7 @@ public class HealthBar : MonoBehaviour
 {
 
     //---Variables---//
-   public float MaxHealth;
+    float MaxHealth;
     float CurrentHealth;
     float HealthPercent;
     float CalculatedHP;
@@ -17,46 +17,46 @@ public class HealthBar : MonoBehaviour
     //----------------------------//
 
     //-----Bools-----//
-    bool IsDead;
-    //--------------//
 
+    //--------------//
+   public Transform UnitHealthBar;
+   public Transform UnitHealthBarDrain;
     //--------Other-Scripts-Include------//
 
     //----------------------------------//
 
     //----------Game-Objects-------------//
-    public Transform UnitHealthBar;
-    public Transform UnitHealthBarDrain;
+
     //----------------------------------//
 
     // Use this for initialization
     void Start()
     {
-        UnitHealthBar = this.transform.GetChild(0);
-        UnitHealthBar = this.transform.GetChild(1);
-        CalculatedHP = CurrentHealth / MaxHealth;
-    }
+       
 
+        CalculatedHP = CurrentHealth / MaxHealth;
+
+    }
     // Update is called once per frame
     void Update()
     {
+       
+    }
+   
+
+public void MoveBar()
+{
         CalculatedHP = CurrentHealth / MaxHealth;
         if (UnitHealthBar.transform.localScale.x < UnitHealthBarDrain.transform.localScale.x)
         {
             UnitHealthBarDrain.transform.localScale = new Vector3(UnitHealthBarDrain.transform.localScale.x - 0.001f, UnitHealthBarDrain.transform.localScale.y, UnitHealthBarDrain.transform.localScale.z);
         }
-
-        if (IsDead == true)
-        {
-            //KILL
-        }
-
     }
 
 
-    //=========MAX HP SETTERS AND GETTERS=======//
+//=========MAX HP SETTERS AND GETTERS=======//
 
-    public float GetMaxHealth()
+public float GetMaxHealth()
     {
         return MaxHealth;
     }
@@ -79,10 +79,6 @@ public class HealthBar : MonoBehaviour
     public void SetCurrentHealth(float UnitHP)
     {
         CurrentHealth = UnitHP;
-        if (CurrentHealth == 0f)
-        {
-            IsDead = true;
-        }
     }
 
     //=============================================//

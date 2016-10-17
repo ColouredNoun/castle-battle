@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Zombear : Unit
+public class Zombunny : Unit
 {
 
     // Use this for initialization
     void Start()
     {
+     
         UnitInit();
-
+        
         UnitHP = 250;
         ArmorValue = 5;
         ArmorType = "Cloth";
@@ -21,7 +22,7 @@ public class Zombear : Unit
         AttackSpeed = 10;
         Turnspeed = 10;
         UnitValue = 100;
-        UnitName = "Zombear";
+        UnitName = "Zombunny";
         SetMaxHealth(UnitHP);
         SetCurrentHealth(UnitHP);
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpawnScript : MonoBehaviour {
     float Timer;
-    public GameObject HealthBar;
+
     public GameObject Unit;
     public RuntimeAnimatorController EnemyAnimatorController;
     public GameObject camera;
@@ -39,7 +39,7 @@ public class SpawnScript : MonoBehaviour {
         //The colour of the unit is changed based on the faction
         Transform Enemy = Faction.EnemyFinder();
         // The Unit targets the enemy castle based on the faction
-        NewUnit.name = ("Zombear" + numberofSpawnedUnits + " " + Faction.Team);
+        NewUnit.name = (Unit.name + numberofSpawnedUnits + " " + Faction.Team);
         //The Unit is named based on the spawned Units
         
         Vector3 NewUnitSpawnPosition = NewUnit.transform.position;

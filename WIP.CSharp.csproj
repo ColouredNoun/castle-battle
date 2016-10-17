@@ -128,6 +128,7 @@
     <Compile Include="Assets\Scripts For WIP\Unit.cs" />
     <Compile Include="Assets\Scripts For WIP\UnitMovement.cs" />
     <Compile Include="Assets\Scripts For WIP\Zombear.cs" />
+    <Compile Include="Assets\Scripts For WIP\Zombunny.cs" />
     <Compile Include="Assets\Scripts For WIP\globalTimerScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
