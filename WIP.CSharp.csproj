@@ -114,6 +114,7 @@
     <Compile Include="Assets\RTS select\Script\Utils.cs" />
     <Compile Include="Assets\RewindTools\Shared\ExtensionMethods.cs" />
     <Compile Include="Assets\Scripts For WIP\AddReduceMoney.cs" />
+    <Compile Include="Assets\Scripts For WIP\AttackTarget.cs" />
     <Compile Include="Assets\Scripts For WIP\Experience.cs" />
     <Compile Include="Assets\Scripts For WIP\Faction.cs" />
     <Compile Include="Assets\Scripts For WIP\HealthBar.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\Scripts For WIP\RTScamera.cs" />
     <Compile Include="Assets\Scripts For WIP\SearchClosestTarget.cs" />
     <Compile Include="Assets\Scripts For WIP\SpawnScript.cs" />
+    <Compile Include="Assets\Scripts For WIP\TakeDamage.cs" />
     <Compile Include="Assets\Scripts For WIP\Team.cs" />
     <Compile Include="Assets\Scripts For WIP\Unit.cs" />
     <Compile Include="Assets\Scripts For WIP\UnitMovement.cs" />

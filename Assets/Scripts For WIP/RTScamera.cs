@@ -11,14 +11,15 @@ public class RTScamera : MonoBehaviour {
 
     public bool gripActive = false;
 
-    Vector3 gripPosition = Input.mousePosition;
+    Vector3 gripPosition; 
 
     float curDistance;
 
     // Use this for initialization
     void Start () {
-	
-	}
+
+   Vector3 gripPosition = Input.mousePosition;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -60,7 +61,7 @@ public class RTScamera : MonoBehaviour {
             if (gripActive == false)
             {
                 gripPosition = Input.mousePosition;
-                print(gripPosition);
+
             }
             gripActive = true;
         }
@@ -79,7 +80,7 @@ public class RTScamera : MonoBehaviour {
        Vector3 temp = Vector3.Scale((pressPos - Input.mousePosition), new Vector3(0.1f, 0.1f, 0.1f));
        transform.position = transform.position + yzSwap(temp);
        gripPosition = Input.mousePosition;
-       print(pressPos);
+
     }
 
     Vector3 yzSwap(Vector3 Swapper)

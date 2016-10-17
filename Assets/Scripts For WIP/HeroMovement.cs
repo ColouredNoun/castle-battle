@@ -4,20 +4,20 @@ using UnityEngine.Networking;
 
 public class HeroMovement : NetworkBehaviour
 {
-   public GameObject Hero;
+  
     Vector3 target;
     bool going;
     private float rotateSpeed = 45F;
     private float Speed = 10f;
-    Animator HeroAnimator;
+    public Animator HeroAnimator;
     public float distanceBetweenPointAndHero;
     void Start()
     {
         target = this.transform.position;
         going = false;
-        HeroAnimator = Hero.GetComponent<Animator>();
+        HeroAnimator = GameObject.Find("Berserker").GetComponent<Animator>();
     }
-
+    
     void Update()
     {
         if (!isLocalPlayer)
@@ -60,8 +60,9 @@ public class HeroMovement : NetworkBehaviour
             
 
                 }
-           else if (distanceBetweenPointAndHero < 1.4)
+           else if (distanceBetweenPointAndHero < 1.2)
             {
+               
                 HeroAnimator.SetBool("WalkForward", false);
             }
             else
