@@ -48,6 +48,7 @@
      <Compile Include="Assets\DebugDrawingExtension\DebugExtension.cs" />
      <Compile Include="Assets\DebugDrawingExtension\Example\Example.cs" />
      <Compile Include="Assets\Fighter Pack Bundle Free\Code\CameraControl.cs" />
+     <Compile Include="Assets\Money\OnScreenTimer.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -101,6 +102,7 @@
      <Compile Include="Assets\Scripts For WIP\RTScamera.cs" />
      <Compile Include="Assets\Scripts For WIP\SearchClosestTarget.cs" />
      <Compile Include="Assets\Scripts For WIP\SpawnScript.cs" />
+     <Compile Include="Assets\Scripts For WIP\TakeDamage.cs" />
      <Compile Include="Assets\Scripts For WIP\Team.cs" />
      <Compile Include="Assets\Scripts For WIP\Unit.cs" />
      <Compile Include="Assets\Scripts For WIP\UnitMovement.cs" />
@@ -199,6 +201,7 @@
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\Fantasy RPG Icon Set- Free\Notes.txt" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />

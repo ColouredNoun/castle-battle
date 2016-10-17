@@ -6,7 +6,7 @@ public class HealthBar : MonoBehaviour
 {
 
     //---Variables---//
-   public float MaxHealth;
+    float MaxHealth;
     float CurrentHealth;
     float HealthPercent;
     float CalculatedHP;
@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
     //----------------------------//
 
     //-----Bools-----//
-    bool IsDead;
+    
     //--------------//
 
     //--------Other-Scripts-Include------//
@@ -31,26 +31,20 @@ public class HealthBar : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {
-        UnitHealthBar = this.transform.GetChild(0);
-        UnitHealthBar = this.transform.GetChild(1);
+    { 
         CalculatedHP = CurrentHealth / MaxHealth;
-    }
 
+        UnitHealthBar = this.transform.GetChild(1).GetChild(1);
+        UnitHealthBarDrain = this.transform.GetChild(1).GetChild(0);
+    }
     // Update is called once per frame
     void Update()
     {
         CalculatedHP = CurrentHealth / MaxHealth;
         if (UnitHealthBar.transform.localScale.x < UnitHealthBarDrain.transform.localScale.x)
         {
-            UnitHealthBarDrain.transform.localScale = new Vector3(UnitHealthBarDrain.transform.localScale.x - 0.001f, UnitHealthBarDrain.transform.localScale.y, UnitHealthBarDrain.transform.localScale.z);
+          UnitHealthBarDrain.transform.localScale = new Vector3(UnitHealthBarDrain.transform.localScale.x - 0.001f, UnitHealthBarDrain.transform.localScale.y, UnitHealthBarDrain.transform.localScale.z);
         }
-
-        if (IsDead == true)
-        {
-            //KILL
-        }
-
     }
 
 
@@ -79,10 +73,6 @@ public class HealthBar : MonoBehaviour
     public void SetCurrentHealth(float UnitHP)
     {
         CurrentHealth = UnitHP;
-        if (CurrentHealth == 0f)
-        {
-            IsDead = true;
-        }
     }
 
     //=============================================//

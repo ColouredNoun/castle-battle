@@ -20,24 +20,26 @@ public class Unit : MonoBehaviour
    public int Turnspeed;
    public int UnitValue;
    public string UnitName;
-    //--------------------//
+   //--------------------//
 
 
-    //-----------Unit-Images------------//
+   //-----------Unit-Images------------//
+   public Transform UnitHealthBar;
+   public Transform UnitHealthBarDrain;
+   //----------------------------------//
 
-    //----------------------------------//
+   //------------GameObjects-----------------//
+   
+   //----------------------------------------//
 
-    //------------GameObjects-----------------//
-
-    //----------------------------------------//
-
-    //--------Other-Scripts-Include------//
-
-    //----------------------------------//
+   //--------Other-Scripts-Include------//
+   public HealthBar healthbar;
+   public Experience XP;
+   //----------------------------------//
 
 
     //-----Bools-----//
-    bool IsDead;
+    public bool IsDead;
     //--------------//
 
 
@@ -45,8 +47,8 @@ public class Unit : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        IsDead = false;
-
+        
+        
     }
 
     // Update is called once per frame
@@ -54,8 +56,17 @@ public class Unit : MonoBehaviour
     {
 
     }
+    public void UnitInit(){
+        healthbar = GetComponent<HealthBar>();
+        XP = GetComponent<Experience>();
+        UnitHealthBar = GetComponent<HealthBar>().UnitHealthBar;
+        UnitHealthBarDrain = GetComponent<HealthBar>().UnitHealthBarDrain;
+        
+        IsDead = false;
 
+    }
     //------SET AND GET ARMOR VALUE-------//
+
     public void SetArmorValue(int PlusArmor)
     {
         ArmorValue = PlusArmor;
@@ -66,5 +77,7 @@ public class Unit : MonoBehaviour
     {
         return ArmorValue;
     }
+
     //-----------------------------------//
+
 }

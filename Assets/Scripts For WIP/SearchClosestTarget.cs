@@ -60,6 +60,10 @@ public class SearchClosestTarget : MonoBehaviour {
                         unitmovement.ChangeTarget(hitColliders[i].transform);
 
                         lockedOn = true;
+                        if (LockedonGameObject != null)
+                        {
+                           lockedOn = false;
+                        }
                     }
                 }
             }

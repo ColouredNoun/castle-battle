@@ -2,10 +2,12 @@
 using System.Collections;
 
 public class Zombear : Unit {
-   
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        UnitInit();
+
         UnitHP = 250;
         ArmorValue = 5;
         ArmorType = "Cloth";
@@ -19,11 +21,29 @@ public class Zombear : Unit {
         Turnspeed = 10;
         UnitValue = 100;
         UnitName = "Zombear";
-        this.GetComponent<HealthBar>().SetCurrentHealth(UnitHP);
+        healthbar.SetMaxHealth(UnitHP);
+        healthbar.SetCurrentHealth(UnitHP);
+        UnitHP = healthbar.GetCurrentHealth();
+        
     }
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+    {
+        if (IsDead == false) 
+        { 
+        UnitHP -= 0.5f;
+        healthbar.SetCurrentHealth(UnitHP);
+        UnitHP = healthbar.GetCurrentHealth();
+        healthbar.SetPercentage();
+            if (UnitHP == 0)
+            {
+                IsDead = true;
+            }
+        }
+       if (IsDead == true)
+        {
+            GameObject.Destroy(gameObject);
+        }
 	}
 }

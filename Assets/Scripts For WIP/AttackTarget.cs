@@ -12,5 +12,6 @@ public class AttackTarget : MonoBehaviour {
 	void Update () {
         Target = this.GetComponent<SearchClosestTarget>().LockedonGameObject;
         print(Target.name);
+
 	}
 }
