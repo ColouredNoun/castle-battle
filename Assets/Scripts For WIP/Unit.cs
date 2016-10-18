@@ -8,18 +8,21 @@ public class Unit : HealthBar
     //------Variables-----//
     public float UnitHP;
     public float Damage;
-    public int ArmorValue;
+    public float ArmorValue;
     public string ArmorType;
     public int CurrentMana;
     public int MaxMana;
     public int MoveSpeed;
-    public int AttackRange;
+    public float AttackRange;
     public string AttackType;
-    public int AttackValue;
-    public int AttackSpeed;
+    public float AttackValue;
+    public float AttackSpeed;
+    public float timer;
     public int Turnspeed;
     public int UnitValue;
     public string UnitName;
+
+
     //--------------------//
 
 
@@ -28,7 +31,7 @@ public class Unit : HealthBar
     //----------------------------------//
 
     //------------GameObjects-----------------//
-
+    GameObject Target;
     //----------------------------------------//
 
     //--------Other-Scripts-Include------//
@@ -39,6 +42,8 @@ public class Unit : HealthBar
 
     //-----Bools-----//
     public bool IsDead;
+    bool AttackReady;
+    public bool attacked;
     //--------------//
 
 
@@ -57,8 +62,11 @@ public class Unit : HealthBar
     }
     public void UnitInit()
     {
-     
-
+        SetMaxHealth(UnitHP);
+        SetCurrentHealth(UnitHP);
+        SetPercentage();
+        SetArmorValue(4f);
+        
        
         XP = GetComponent<Experience>();
       
@@ -68,17 +76,57 @@ public class Unit : HealthBar
     }
     //------SET AND GET ARMOR VALUE-------//
 
-    public void SetArmorValue(int PlusArmor)
+    public void SetArmorValue(float PlusArmor)
     {
         ArmorValue = PlusArmor;
 
     }
 
-    public int GetArmorValue()
+    public float GetArmorValue()
     {
         return ArmorValue;
     }
 
     //-----------------------------------//
+    
+    //-------------AttackScript---------------//
+    public void Attack()
+    {
+        Target = this.GetComponent<SearchClosestTarget>().LockedonGameObject;
+
+        if (Target != null && AttackReady ==true)
+        {
+      
+        AttackReady = false;
+       
+        Target.GetComponent<Unit>().TakeDamage(AttackValue);
+  
+        timer = 0f;
+        }
+    }
+    //---------------------------------------//
+
+    //===============TakeDamage=====================//
+    public void TakeDamage(float Dmg)
+    {
+   
+        Dmg -= GetArmorValue();
+        UnitHP -= Dmg;
+        SetCurrentHealth(UnitHP);
+        SetPercentage();
+    }
+    //==============================================//
+
+    // Attack speed //
+    public void AttackTimer()
+    {
+        timer += Time.deltaTime;
+        
+        if (timer >= AttackSpeed)
+        { AttackReady = true;
+        }
+    }
+
+    //=--=-=-=-=-==-//
 
 }

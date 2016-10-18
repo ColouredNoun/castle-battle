@@ -127,6 +127,7 @@
     <Compile Include="Assets\Scripts For WIP\Team.cs" />
     <Compile Include="Assets\Scripts For WIP\Unit.cs" />
     <Compile Include="Assets\Scripts For WIP\UnitMovement.cs" />
+    <Compile Include="Assets\Scripts For WIP\UnitUpgrades.cs" />
     <Compile Include="Assets\Scripts For WIP\Zombear.cs" />
     <Compile Include="Assets\Scripts For WIP\Zombunny.cs" />
     <Compile Include="Assets\Scripts For WIP\globalTimerScript.cs" />

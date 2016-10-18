@@ -67,6 +67,7 @@ public class SearchClosestTarget : MonoBehaviour
                         {
                             lockedOn = false;
                         }
+                        
                     }
                 }
             }

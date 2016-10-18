@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class UnitMovement : MonoBehaviour {
-
+  
     public Transform target;
-    private float Speed = 2f;
+    public float Speed = 2f;
     private Vector3 rotateSpeed = Vector3.down * 50f;
 
-   
+    
 
 
     // Use this for initialization

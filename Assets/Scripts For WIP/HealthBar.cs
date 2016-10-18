@@ -46,10 +46,9 @@ public class HealthBar : MonoBehaviour
 
 public void MoveBar()
 {
-        CalculatedHP = CurrentHealth / MaxHealth;
         if (UnitHealthBar.transform.localScale.x < UnitHealthBarDrain.transform.localScale.x)
         {
-            UnitHealthBarDrain.transform.localScale = new Vector3(UnitHealthBarDrain.transform.localScale.x - 0.001f, UnitHealthBarDrain.transform.localScale.y, UnitHealthBarDrain.transform.localScale.z);
+            UnitHealthBarDrain.transform.localScale = new Vector3(UnitHealthBarDrain.transform.localScale.x - 0.03f, UnitHealthBarDrain.transform.localScale.y, UnitHealthBarDrain.transform.localScale.z);
         }
     }
 
@@ -64,7 +63,6 @@ public float GetMaxHealth()
     public void SetMaxHealth(float UnitHP)
     {
         MaxHealth = UnitHP;
-        SetPercentage();
     }
 
     //=========================================//
@@ -79,6 +77,7 @@ public float GetMaxHealth()
     public void SetCurrentHealth(float UnitHP)
     {
         CurrentHealth = UnitHP;
+        CalculatedHP = CurrentHealth / MaxHealth;
     }
 
     //=============================================//
